@@ -1,26 +1,51 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Header } from "@/components/Header";
+import { Hero } from "@/components/Hero";
+import { Marquee } from "@/components/Marquee";
+import { Toppers } from "@/components/Toppers";
+import { About } from "@/components/About";
+import { Stats } from "@/components/Stats";
+import { Courses } from "@/components/Courses";
+import { Campuses } from "@/components/Campuses";
+import { Gallery } from "@/components/Gallery";
+import { AppSection } from "@/components/AppSection";
+import { Contact } from "@/components/Contact";
+import { useReveal } from "@/hooks/useReveal";
 
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Nucleii Educational Academy — NEET · JEE · KCET Coaching" },
+      {
+        name: "description",
+        content:
+          "India's leading NEET, IIT-JEE & KCET coaching academy. 10+ campuses, 3000+ students, State Rank #6. Apply for admissions 2026.",
+      },
+      { property: "og:title", content: "Nucleii Educational Academy" },
+      {
+        property: "og:description",
+        content: "Shape the future of every brilliant mind — NEET · JEE · KCET coaching across India.",
+      },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. For sites with multiple pages (About, Services, Contact, etc.),
-// create separate route files (about.tsx, services.tsx, contact.tsx) — don't put all pages in this file.
-function PlaceholderIndex() {
-  return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
-  );
-}
-
 function Index() {
-  return <PlaceholderIndex />;
+  useReveal();
+  return (
+    <main className="relative">
+      <Header />
+      <Hero />
+      <Marquee />
+      <About />
+      <Toppers />
+      <Stats />
+      <Courses />
+      <Campuses />
+      <Gallery />
+      <AppSection />
+      <Contact />
+    </main>
+  );
 }
