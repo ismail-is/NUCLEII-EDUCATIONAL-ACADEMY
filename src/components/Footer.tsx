@@ -8,7 +8,7 @@ export function Footer() {
     <footer className="relative bg-navy text-white pt-16 pb-8 overflow-hidden">
       <div className="absolute inset-0 bg-grid opacity-[0.07] mask-radial" />
       <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full bg-magenta/20 blur-[120px]" />
-
+{/* hey */}
       <div className="relative container mx-auto px-5">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <div className="text-xs uppercase tracking-[0.3em] text-magenta font-semibold">
