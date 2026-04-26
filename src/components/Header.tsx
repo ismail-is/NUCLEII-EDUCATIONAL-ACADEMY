@@ -26,21 +26,19 @@ export function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "py-3 bg-background/80 backdrop-blur-xl border-b border-border/50"
-          : "py-5 bg-transparent"
+          ? "py-3 bg-white/85 backdrop-blur-xl border-b border-border"
+          : "py-5 bg-white/40 backdrop-blur-md"
       }`}
     >
       <div className="container mx-auto px-5 flex items-center justify-between">
         <a href="#home" className="flex items-center gap-3 group">
           <div className="relative">
-            <div className="absolute inset-0 rounded-full bg-magenta/40 blur-xl group-hover:bg-magenta/60 transition" />
+            <div className="absolute inset-0 rounded-full bg-magenta/30 blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />
             <img src={logo} alt="Nucleii Educational Academy" className="relative h-10 w-auto" />
           </div>
           <div className="hidden sm:flex flex-col leading-none">
-            <span className={`font-display font-bold tracking-tight text-lg ${scrolled ? "text-primary" : "text-white"}`}>
-              NUCLEII
-            </span>
-            <span className={`text-[10px] uppercase tracking-[0.2em] ${scrolled ? "text-muted-foreground" : "text-white/70"}`}>
+            <span className="font-display font-bold tracking-tight text-lg text-navy">NUCLEII</span>
+            <span className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
               Medical · IIT-JEE · Foundation
             </span>
           </div>
@@ -51,9 +49,7 @@ export function Header() {
             <a
               key={l.href}
               href={l.href}
-              className={`relative px-4 py-2 text-sm font-medium transition-colors group ${
-                scrolled ? "text-foreground/80 hover:text-primary" : "text-white/80 hover:text-white"
-              }`}
+              className="relative px-4 py-2 text-sm font-medium text-foreground/70 hover:text-foreground transition-colors group"
             >
               {l.label}
               <span className="absolute left-4 right-4 bottom-1 h-px scale-x-0 group-hover:scale-x-100 origin-left transition-transform bg-magenta" />
@@ -64,16 +60,14 @@ export function Header() {
         <div className="flex items-center gap-3">
           <a
             href="tel:+919538724158"
-            className="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-magenta text-magenta-foreground text-sm font-semibold shadow-glow hover:scale-105 transition-transform"
+            className="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-brand text-white text-sm font-semibold shadow-card hover:shadow-glow hover:scale-105 transition"
           >
             <Phone className="w-4 h-4" /> Admissions
           </a>
           <button
             aria-label="Menu"
             onClick={() => setOpen((v) => !v)}
-            className={`lg:hidden w-10 h-10 grid place-items-center rounded-full border ${
-              scrolled ? "border-border text-foreground" : "border-white/30 text-white"
-            }`}
+            className="lg:hidden w-10 h-10 grid place-items-center rounded-full border border-border text-foreground bg-white"
           >
             {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
@@ -81,7 +75,7 @@ export function Header() {
       </div>
 
       {open && (
-        <div className="lg:hidden mt-3 mx-5 rounded-2xl glass-light p-4 flex flex-col">
+        <div className="lg:hidden mt-3 mx-5 rounded-2xl bg-white border border-border shadow-card p-4 flex flex-col">
           {links.map((l) => (
             <a
               key={l.href}

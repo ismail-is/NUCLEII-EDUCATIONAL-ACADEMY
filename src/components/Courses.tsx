@@ -5,7 +5,7 @@ const courses = [
   {
     icon: GraduationCap,
     title: "Long Term Coaching",
-    desc: "Built for NEET. Strong fundamentals, complete syllabus coverage, regular tests and personalized mentoring to drive top medical ranks.",
+    desc: "Built for NEET. Strong fundamentals, complete syllabus coverage, regular tests and personalised mentoring to drive top medical ranks.",
     tag: "NEET",
   },
   {
@@ -30,7 +30,11 @@ const courses = [
 
 export function Courses() {
   return (
-    <section id="courses" className="relative py-28 md:py-36 bg-secondary/40">
+    <section id="courses" className="relative py-28 md:py-36 overflow-hidden">
+      {/* Light grid backdrop */}
+      <div className="absolute inset-0 bg-grid-sm opacity-40 mask-radial -z-10" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-magenta/8 blur-[140px] -z-10" />
+
       <div className="container mx-auto px-5">
         <div className="grid md:grid-cols-2 gap-10 items-end mb-16">
           <div className="reveal">
@@ -38,7 +42,7 @@ export function Courses() {
               Programmes
             </span>
             <h2 className="mt-3 font-display text-4xl md:text-6xl font-bold tracking-tight">
-              Kind of Nucleii <span className="text-gradient-magenta italic">Academics</span>
+              Kind of Nucleii <span className="text-gradient-pink italic">Academics</span>
             </h2>
           </div>
           <p className="reveal text-lg text-muted-foreground">
@@ -58,15 +62,15 @@ export function Courses() {
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.7, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
               whileHover={{ y: -8 }}
-              className="group relative p-8 md:p-10 rounded-3xl bg-card border border-border shadow-card overflow-hidden cursor-pointer"
+              className="group relative p-8 md:p-10 rounded-3xl bg-white border border-border shadow-card hover:shadow-soft overflow-hidden cursor-pointer transition-shadow"
             >
-              <div className="absolute -right-20 -top-20 w-72 h-72 rounded-full bg-gradient-magenta opacity-0 group-hover:opacity-100 blur-3xl transition-opacity duration-700" />
+              <div className="absolute -right-20 -top-20 w-72 h-72 rounded-full bg-magenta-soft group-hover:bg-magenta/15 blur-3xl transition-all duration-700" />
               <div className="relative flex flex-col h-full">
                 <div className="flex items-start justify-between">
-                  <div className="w-14 h-14 rounded-2xl bg-gradient-magenta grid place-items-center shadow-glow">
+                  <div className="w-14 h-14 rounded-2xl bg-gradient-brand grid place-items-center shadow-card">
                     <c.icon className="w-7 h-7 text-white" />
                   </div>
-                  <span className="text-[10px] uppercase tracking-[0.25em] text-magenta font-semibold px-3 py-1 rounded-full border border-magenta/30">
+                  <span className="text-[10px] uppercase tracking-[0.25em] text-magenta font-semibold px-3 py-1 rounded-full border border-magenta/30 bg-magenta-soft">
                     {c.tag}
                   </span>
                 </div>
