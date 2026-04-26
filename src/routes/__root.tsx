@@ -1,6 +1,9 @@
 import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
 
 import appCss from "../styles.css?url";
+import { PopupForm } from "../components/PopupForm";
+import { ScrollToTop } from "../components/ScrollToTop";
+import { FloatingAppCTA } from "../components/ui/FloatingAppCTA";
 
 function NotFoundComponent() {
   return (
@@ -30,13 +33,15 @@ export const Route = createRootRoute({
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Nucleii Educational Academy — NEET · JEE · KCET" },
-      { name: "description", content: "Leading the way in NEET, JEE & KCET excellence across India." },
+      {
+        name: "description",
+        content: "Leading the way in NEET, JEE & KCET excellence across India.",
+      },
       { name: "author", content: "Nucleii Educational Academy" },
       { property: "og:title", content: "Nucleii Educational Academy" },
       { property: "og:description", content: "Shape the future of every brilliant mind." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -71,5 +76,12 @@ function RootShell({ children }: { children: React.ReactNode }) {
 }
 
 function RootComponent() {
-  return <Outlet />;
+  return (
+    <>
+      <Outlet />
+      <PopupForm />
+      <ScrollToTop />
+      <FloatingAppCTA />
+    </>
+  );
 }

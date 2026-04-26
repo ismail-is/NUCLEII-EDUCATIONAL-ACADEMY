@@ -1,9 +1,21 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import {
-  GraduationCap, BookOpen, Atom, Beaker,
-  Users, FileCheck, Brain, MessageCircle, ClipboardList, BarChart3, FlaskConical,
-  ArrowRight, Globe, UserCheck, Sparkles,
+  GraduationCap,
+  BookOpen,
+  Atom,
+  Beaker,
+  Users,
+  FileCheck,
+  Brain,
+  MessageCircle,
+  ClipboardList,
+  BarChart3,
+  FlaskConical,
+  ArrowRight,
+  Globe,
+  UserCheck,
+  Sparkles,
 } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -14,9 +26,16 @@ export const Route = createFileRoute("/courses")({
   head: () => ({
     meta: [
       { title: "Courses — Nucleii Educational Academy" },
-      { name: "description", content: "Long Term, PU Integrated, Foundation & Tuition coaching for NEET, IIT-JEE, KVPY, NTSE and Olympiads." },
+      {
+        name: "description",
+        content:
+          "Long Term, PU Integrated, Foundation & Tuition coaching for NEET, IIT-JEE, KVPY, NTSE and Olympiads.",
+      },
       { property: "og:title", content: "Our Courses — Nucleii" },
-      { property: "og:description", content: "Programmes designed to build strong fundamentals and crack competitive exams." },
+      {
+        property: "og:description",
+        content: "Programmes designed to build strong fundamentals and crack competitive exams.",
+      },
     ],
   }),
   component: CoursesPage,
@@ -86,13 +105,17 @@ function CoursesPage() {
 
       <PageHero
         eyebrow="We Provide"
-        title={<>Our Courses <span className="text-gradient-pink italic">Includes</span></>}
+        title={
+          <>
+            Our Courses <span className="text-gradient-pink italic">Include</span>
+          </>
+        }
         description="A structured, student-focused academic system to build strong fundamentals and crack NEET, JEE, KCET and Olympiads."
         breadcrumb={[{ label: "Home", to: "/" }, { label: "Courses" }]}
       />
 
       {/* Includes grid */}
-      <section className="relative py-20 md:py-24 overflow-hidden">
+      <section className="relative py-12 md:py-16 overflow-hidden">
         <div className="absolute inset-0 bg-grid-sm opacity-30 mask-radial -z-10" />
         <div className="container mx-auto px-5">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -118,13 +141,15 @@ function CoursesPage() {
       </section>
 
       {/* Courses */}
-      <section className="relative py-24 md:py-32 overflow-hidden">
+      <section className="relative py-16 md:py-24 overflow-hidden">
         <div className="absolute inset-0 bg-grid-pink opacity-30 mask-radial -z-10" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-magenta/8 blur-[140px] -z-10" />
 
         <div className="container mx-auto px-5">
           <div className="reveal text-center max-w-2xl mx-auto mb-16">
-            <span className="text-magenta text-xs font-semibold tracking-[0.3em] uppercase">Our Courses</span>
+            <span className="text-magenta text-xs font-semibold tracking-[0.3em] uppercase">
+              Our Courses
+            </span>
             <h2 className="mt-3 font-display text-4xl md:text-6xl font-bold tracking-tight">
               Kind of Nucleii <span className="text-gradient-pink italic">Academics</span>
             </h2>
@@ -169,13 +194,16 @@ function CoursesPage() {
       </section>
 
       {/* Journey ahead */}
-      <section className="relative py-24 md:py-32 overflow-hidden">
+      <section className="relative py-16 md:py-24 overflow-hidden">
         <div className="absolute inset-0 bg-grid-sm opacity-30 mask-radial -z-10" />
         <div className="container mx-auto px-5">
           <div className="reveal max-w-3xl mx-auto text-center mb-14">
-            <span className="text-magenta text-xs font-semibold tracking-[0.3em] uppercase">To The Journey Ahead</span>
+            <span className="text-magenta text-xs font-semibold tracking-[0.3em] uppercase">
+              To The Journey Ahead
+            </span>
             <h2 className="mt-3 font-display text-4xl md:text-6xl font-bold tracking-tight">
-              Gain Valuable <span className="text-gradient-pink italic">Knowledge</span> &amp; Experience
+              Gain Valuable <span className="text-gradient-pink italic">Knowledge</span> &amp;
+              Experience
             </h2>
           </div>
 
@@ -192,7 +220,9 @@ function CoursesPage() {
                 <div className="w-12 h-12 rounded-xl bg-gradient-pink grid place-items-center shadow-glow">
                   <j.icon className="w-6 h-6 text-white" />
                 </div>
-                <div className="mt-6 font-display text-2xl font-bold text-foreground">{j.title}</div>
+                <div className="mt-6 font-display text-2xl font-bold text-foreground">
+                  {j.title}
+                </div>
                 <p className="mt-3 text-muted-foreground leading-relaxed">{j.desc}</p>
               </motion.div>
             ))}
@@ -201,13 +231,21 @@ function CoursesPage() {
           {/* Two-column promise strip */}
           <div className="mt-12 grid md:grid-cols-2 gap-5">
             <div className="reveal p-8 rounded-3xl bg-gradient-brand text-white shadow-glow">
-              <div className="text-xs uppercase tracking-[0.3em] opacity-70 font-semibold">You Apply</div>
-              <div className="mt-3 font-display text-3xl font-bold">Material provided by NUCLEII</div>
+              <div className="text-xs uppercase tracking-[0.3em] opacity-70 font-semibold">
+                You Apply
+              </div>
+              <div className="mt-3 font-display text-3xl font-bold">
+                Material provided by NUCLEII
+              </div>
               <p className="mt-3 text-white/80">For Foundation Classes and Integrated Coaching.</p>
             </div>
             <div className="reveal p-8 rounded-3xl bg-gradient-pink text-white shadow-glow">
-              <div className="text-xs uppercase tracking-[0.3em] opacity-70 font-semibold">We Connect</div>
-              <div className="mt-3 font-display text-3xl font-bold">DPPs &amp; cumulative tests</div>
+              <div className="text-xs uppercase tracking-[0.3em] opacity-70 font-semibold">
+                We Connect
+              </div>
+              <div className="mt-3 font-display text-3xl font-bold">
+                DPPs &amp; cumulative tests
+              </div>
               <p className="mt-3 text-white/80">
                 The academy &amp; faculty provide DPPs across all classes and subjects, and conduct
                 cumulative tests for students.

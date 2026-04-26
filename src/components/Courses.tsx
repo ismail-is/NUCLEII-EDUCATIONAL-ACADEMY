@@ -30,7 +30,7 @@ const courses = [
 
 export function Courses() {
   return (
-    <section id="courses" className="relative py-28 md:py-36 overflow-hidden">
+    <section id="courses" className="relative py-16 md:py-24 overflow-hidden">
       {/* Light grid backdrop */}
       <div className="absolute inset-0 bg-grid-sm opacity-40 mask-radial -z-10" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-magenta/8 blur-[140px] -z-10" />
@@ -42,7 +42,7 @@ export function Courses() {
               Programmes
             </span>
             <h2 className="mt-3 font-display text-4xl md:text-6xl font-bold tracking-tight">
-              Kind of Nucleii <span className="text-gradient-pink italic">Academics</span>
+              Kind of Nucleii <span className="text-gradient-pink italic pr-2">Academics</span>
             </h2>
           </div>
           <p className="reveal text-lg text-muted-foreground">

@@ -16,9 +16,17 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Nucleii Educational Academy — NEET · JEE · KCET Coaching" },
-      { name: "description", content: "India's leading NEET, IIT-JEE & KCET coaching academy. 10+ campuses, 3,000+ students, State Rank #6." },
+      {
+        name: "description",
+        content:
+          "India's leading NEET, IIT-JEE & KCET coaching academy. 10+ campuses, 3,000+ students, State Rank #6.",
+      },
       { property: "og:title", content: "Nucleii Educational Academy" },
-      { property: "og:description", content: "Shape the future of every brilliant mind — NEET · JEE · KCET coaching across India." },
+      {
+        property: "og:description",
+        content:
+          "Shape the future of every brilliant mind — NEET · JEE · KCET coaching across India.",
+      },
     ],
   }),
   component: Index,
@@ -34,10 +42,12 @@ function Index() {
       <About />
       <Toppers />
       <Stats />
+      <AppSection />
+      <Marquee />
       <Courses />
       <Campuses />
-      <Gallery />
-      <AppSection />
+      {/* <Gallery /> */}
+
       <Footer />
     </main>
   );

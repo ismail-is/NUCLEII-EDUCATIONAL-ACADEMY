@@ -19,95 +19,137 @@ export function Toppers() {
     target: ref,
     offset: ["start end", "end start"],
   });
-  const y1 = useTransform(scrollYProgress, [0, 1], [60, -60]);
-  const y2 = useTransform(scrollYProgress, [0, 1], [-40, 40]);
+  const y1 = useTransform(scrollYProgress, [0, 1], [100, -100]);
+  const y2 = useTransform(scrollYProgress, [0, 1], [50, -50]);
 
   return (
-    <section id="toppers" ref={ref} className="relative py-28 md:py-36 overflow-hidden">
-      {/* faint section grid */}
-      <div className="absolute inset-0 bg-grid-sm opacity-30 mask-radial -z-10" />
+    <section
+      id="toppers"
+      ref={ref}
+      className="relative py-16 md:py-24 overflow-hidden bg-background/50"
+    >
+      {/* Background decorations */}
+      <div className="absolute inset-0 bg-grid-sm opacity-20 mask-radial -z-10" />
+      <div className="absolute -top-24 -left-24 w-96 h-96 bg-magenta/5 rounded-full blur-3xl -z-10 animate-pulse" />
+      <div
+        className="absolute -bottom-24 -right-24 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl -z-10 animate-pulse"
+        style={{ animationDelay: "2s" }}
+      />
 
       <div className="container mx-auto px-5">
-        <div className="reveal max-w-3xl">
-          <span className="inline-block text-magenta text-xs font-semibold tracking-[0.3em] uppercase">
-            Achievers 2026
-          </span>
-          <h2 className="mt-3 font-display text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground">
-            Our PU II <span className="text-gradient-pink italic">Toppers</span>
-          </h2>
-          <p className="mt-5 text-lg text-muted-foreground max-w-xl">
-            Karnataka State Rank #6. Six toppers above 95%. Real results from real
-            students who chose Nucleii.
-          </p>
+        {/* Header Section - Now Centered */}
+        <div className="flex flex-col items-center text-center max-w-4xl mx-auto mb-20">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-magenta/10 text-magenta text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase mb-4 border border-magenta/20">
+              <Award className="w-3 h-3 md:w-4 md:h-4" />
+              Achievers 2026
+            </span>
+          </motion.div>
+
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="font-display text-4xl md:text-6xl lg:text-8xl font-bold tracking-tight text-foreground leading-tight"
+          >
+            Our PU II <span className="text-gradient-pink italic pr-4">Toppers</span>
+          </motion.h2>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="mt-6 text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed"
+          >
+            Karnataka State Rank #6. Six toppers above 95%. Real results from real students who
+            chose <span className="text-foreground font-semibold">Nucleii</span> to excel in their
+            academic journey.
+          </motion.p>
         </div>
 
-        <div className="mt-16 grid lg:grid-cols-12 gap-6 items-stretch">
-          {/* Hero topper card */}
-          <motion.div style={{ y: y1 }} className="lg:col-span-5 reveal">
-            <div className="relative rounded-3xl overflow-hidden shadow-soft group h-[560px] bg-white border border-border">
-              <img
-                src={chethana}
-                alt="Chethana — State 6th Rank"
-                className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-navy/95 via-navy/30 to-transparent" />
-              <div className="absolute top-5 left-5 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gradient-pink text-white text-xs font-semibold shadow-glow">
-                <Trophy className="w-3.5 h-3.5" /> STATE 6TH RANK
+        {/* Images Grid - Perfectly Aligned and Balanced */}
+        <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-stretch">
+          {/* Main Hero Poster */}
+          <motion.div
+            style={{ y: y1 }}
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="relative group h-full"
+          >
+            <div className="relative h-full rounded-[2.5rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.15)] border border-white/20 bg-white dark:bg-zinc-900 transition-all duration-500 group-hover:shadow-[0_30px_60px_rgba(219,39,119,0.2)]">
+              <div className="aspect-[4/5] sm:aspect-square lg:aspect-[4/5] overflow-hidden">
+                <img
+                  src={chethana}
+                  alt="Chethana — State 6th Rank"
+                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000 ease-out"
+                  loading="lazy"
+                />
               </div>
-              <div className="absolute bottom-7 left-7 right-7 text-white">
-                <div className="text-xs uppercase tracking-[0.3em] opacity-80">Karnataka PU Board</div>
-                <div className="font-display text-5xl font-bold mt-1">CHETHANA</div>
-                <div className="mt-3 text-3xl font-display font-bold text-gradient-pink">
-                  594 <span className="text-white/60 text-xl">/ 600</span>
+
+              {/* Overlay Content */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8 md:p-12">
+                <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 text-center">
+                  <h3 className="text-white text-2xl md:text-4xl font-bold mb-2">Chethana</h3>
+                  <p className="text-magenta font-semibold text-lg">Karnataka State Rank #6</p>
                 </div>
-                <div className="text-sm opacity-70 mt-1">Vijaya PU College, Kunigal</div>
+              </div>
+
+              {/* Status Badge */}
+              <div className="absolute top-6 right-6">
+                <div className="bg-white/90 backdrop-blur px-4 py-2 rounded-2xl shadow-lg border border-magenta/20 flex items-center gap-2">
+                  <Trophy className="w-4 h-4 text-magenta" />
+                  <span className="font-bold text-magenta text-sm">STATE RANK #6</span>
+                </div>
               </div>
             </div>
           </motion.div>
 
-          <div className="lg:col-span-7 grid sm:grid-cols-2 gap-5 content-stretch">
-            {toppers.map((t, i) => (
-              <motion.div
-                key={t.name}
-                style={{ y: i % 2 === 0 ? y2 : y1 }}
-                whileHover={{ y: -6 }}
-                className="reveal relative p-7 rounded-2xl bg-white border border-border shadow-card group overflow-hidden"
-              >
-                <div className="absolute -right-10 -top-10 w-40 h-40 rounded-full bg-magenta-soft group-hover:bg-magenta/15 blur-2xl transition" />
-                <div className="relative">
-                  <Award className="w-6 h-6 text-magenta" />
-                  <div className="mt-5 font-display text-2xl font-bold text-foreground">
-                    {t.name}
-                  </div>
-                  <div className="mt-1 text-3xl font-display font-bold text-gradient-pink">
-                    {t.score}
-                    <span className="text-base text-muted-foreground font-medium"> / 600</span>
-                  </div>
-                  <div className="mt-2 text-sm text-muted-foreground">{t.college}</div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
+          {/* Secondary Group Poster */}
+          <motion.div
+            style={{ y: y1 }}
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="relative group h-full"
+          >
+            <div className="relative h-full rounded-[2.5rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.15)] border border-white/20 bg-white dark:bg-zinc-900 transition-all duration-500 group-hover:shadow-[0_30px_60px_rgba(59,130,246,0.2)]">
+              <div className="aspect-[4/5] sm:aspect-square lg:aspect-[4/5] overflow-hidden">
+                <img
+                  src={toppersImg}
+                  alt="Nucleii Toppers Group"
+                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000 ease-out"
+                  loading="lazy"
+                />
+              </div>
 
-        {/* Group banner */}
-        <div className="mt-14 reveal rounded-3xl overflow-hidden shadow-soft relative bg-white border border-border">
-          <img
-            src={toppersImg}
-            alt="Top achievers group"
-            className="w-full h-[260px] md:h-[420px] object-cover"
-            loading="lazy"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-navy/90 via-navy/30 to-transparent flex items-center">
-            <div className="px-8 md:px-16 max-w-md text-white">
-              <div className="text-xs uppercase tracking-[0.3em] opacity-80">Class of 2026</div>
-              <div className="mt-2 font-display text-3xl md:text-5xl font-bold leading-tight">
-                Excellence isn't a moment. It's a method.
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8 md:p-12">
+                <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 text-center">
+                  <h3 className="text-white text-2xl md:text-4xl font-bold mb-2">Class of 2026</h3>
+                  <p className="text-blue-400 font-semibold text-lg">Setting New Benchmarks</p>
+                </div>
+              </div>
+
+              <div className="absolute top-6 left-6">
+                <div className="bg-blue-600/90 backdrop-blur px-4 py-2 rounded-2xl shadow-lg border border-blue-400/20 flex items-center gap-2 text-white">
+                  <Award className="w-4 h-4" />
+                  <span className="font-bold text-sm">95%+ ACHIEVERS</span>
+                </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
+
+        {/* Individual Toppers Grid */}
       </div>
     </section>
   );

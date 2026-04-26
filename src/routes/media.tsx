@@ -15,9 +15,15 @@ export const Route = createFileRoute("/media")({
   head: () => ({
     meta: [
       { title: "Media & Gallery — Nucleii Educational Academy" },
-      { name: "description", content: "Some of our moments — student events, classroom moments and Nucleii memories." },
+      {
+        name: "description",
+        content: "Some of our moments — student events, classroom moments and Nucleii memories.",
+      },
       { property: "og:title", content: "Gallery — Nucleii" },
-      { property: "og:description", content: "A glimpse into life at Nucleii Educational Academy." },
+      {
+        property: "og:description",
+        content: "A glimpse into life at Nucleii Educational Academy.",
+      },
     ],
   }),
   component: MediaPage,
@@ -45,13 +51,17 @@ function MediaPage() {
       <Header />
 
       <PageHero
-        eyebrow="Some Of Moments"
-        title={<>Our <span className="text-gradient-pink italic">Gallery</span></>}
+        eyebrow="Some Of Our Moments"
+        title={
+          <>
+            Our <span className="text-gradient-pink italic">Gallery</span>
+          </>
+        }
         description="Behind every rank, a community — late-night sessions, encouraging mentors, and friendships built on shared ambition."
         breadcrumb={[{ label: "Home", to: "/" }, { label: "Media" }]}
       />
 
-      <section className="relative py-16 md:py-24 overflow-hidden">
+      <section className="relative py-12 md:py-16 overflow-hidden">
         <div className="absolute inset-0 bg-grid-sm opacity-30 mask-radial -z-10" />
 
         <div className="container mx-auto px-5">

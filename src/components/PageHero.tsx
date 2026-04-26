@@ -12,7 +12,7 @@ interface PageHeroProps {
 
 export function PageHero({ eyebrow, title, description, breadcrumb }: PageHeroProps) {
   return (
-    <section className="relative pt-40 pb-20 md:pt-48 md:pb-28 overflow-hidden bg-background">
+    <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden bg-background">
       <GridBackground variant="soft" />
 
       <div className="relative z-10 container mx-auto px-5 text-center">

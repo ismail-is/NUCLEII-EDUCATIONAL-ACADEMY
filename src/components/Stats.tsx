@@ -43,18 +43,18 @@ function Counter({ end, suffix }: { end: number; suffix: string }) {
 
 export function Stats() {
   return (
-    <section className="relative py-24 overflow-hidden">
+    <section className="relative py-12 md:py-16 overflow-hidden">
       {/* Subtle grid + soft magenta wash */}
       <div className="absolute inset-0 bg-grid-pink opacity-50 mask-radial -z-10" />
       <div className="absolute inset-0 bg-gradient-soft -z-10" />
 
       <div className="container mx-auto px-5">
-        <div className="reveal max-w-2xl">
-          <span className="text-magenta text-xs font-semibold tracking-[0.3em] uppercase">
+        <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-16 md:mb-24">
+          <span className="inline-block text-magenta text-xs font-bold tracking-[0.3em] uppercase mb-4 px-4 py-1.5 rounded-full bg-magenta/5 border border-magenta/10">
             Our Impact
           </span>
-          <h2 className="mt-3 font-display text-4xl md:text-6xl font-bold tracking-tight">
-            Excellence, <span className="text-gradient-pink italic">measured</span>.
+          <h2 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground leading-[1.1]">
+            Excellence, <span className="text-gradient-pink italic pr-2">Measured</span>.
           </h2>
         </div>
 
