@@ -1,19 +1,21 @@
+import { Link, useLocation } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X, Phone } from "lucide-react";
 import logo from "@/assets/nucleii-logo.png";
 
 const links = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Toppers", href: "#toppers" },
-  { label: "Courses", href: "#courses" },
-  { label: "Campuses", href: "#campuses" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", to: "/" as const },
+  { label: "About", to: "/about" as const },
+  { label: "Courses", to: "/courses" as const },
+  { label: "Results", to: "/results" as const },
+  { label: "Media", to: "/media" as const },
+  { label: "Contact", to: "/contact" as const },
 ];
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -21,6 +23,8 @@ export function Header() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  useEffect(() => setOpen(false), [location.pathname]);
 
   return (
     <header
@@ -31,7 +35,7 @@ export function Header() {
       }`}
     >
       <div className="container mx-auto px-5 flex items-center justify-between">
-        <a href="#home" className="flex items-center gap-3 group">
+        <Link to="/" className="flex items-center gap-3 group">
           <div className="relative">
             <div className="absolute inset-0 rounded-full bg-magenta/30 blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />
             <img src={logo} alt="Nucleii Educational Academy" className="relative h-10 w-auto" />
@@ -42,18 +46,19 @@ export function Header() {
               Medical · IIT-JEE · Foundation
             </span>
           </div>
-        </a>
+        </Link>
 
         <nav className="hidden lg:flex items-center gap-1">
           {links.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
+            <Link
+              key={l.to}
+              to={l.to}
               className="relative px-4 py-2 text-sm font-medium text-foreground/70 hover:text-foreground transition-colors group"
+              activeProps={{ className: "text-magenta font-semibold" }}
             >
               {l.label}
               <span className="absolute left-4 right-4 bottom-1 h-px scale-x-0 group-hover:scale-x-100 origin-left transition-transform bg-magenta" />
-            </a>
+            </Link>
           ))}
         </nav>
 
@@ -77,14 +82,14 @@ export function Header() {
       {open && (
         <div className="lg:hidden mt-3 mx-5 rounded-2xl bg-white border border-border shadow-card p-4 flex flex-col">
           {links.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              onClick={() => setOpen(false)}
+            <Link
+              key={l.to}
+              to={l.to}
               className="px-4 py-3 rounded-lg text-foreground hover:bg-secondary transition"
+              activeProps={{ className: "text-magenta bg-magenta-soft font-semibold" }}
             >
               {l.label}
-            </a>
+            </Link>
           ))}
         </div>
       )}
