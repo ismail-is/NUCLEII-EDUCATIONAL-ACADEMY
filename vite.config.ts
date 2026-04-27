@@ -10,4 +10,13 @@ export default defineConfig({
   vite: {
     base: '/',
   },
+  cloudflare: false,
+  tanstackStart: {
+    nitro: {
+      preset: 'vercel',
+    },
+  },
 });
+
+
+
