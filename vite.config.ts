@@ -10,16 +10,8 @@ export default defineConfig({
   vite: {
     base: '/NUCLEII-EDUCATIONAL-ACADEMY/',
   },
-  tanstackStart: {
-    nitro: {
-      preset: 'github-pages',
-    },
-    prerender: {
-      routes: ['/'],
-      crawlLinks: true,
-    },
-  },
 });
+
 
 
 
