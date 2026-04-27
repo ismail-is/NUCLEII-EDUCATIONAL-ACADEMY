@@ -11,6 +11,9 @@ export default defineConfig({
     base: '/NUCLEII-EDUCATIONAL-ACADEMY/',
   },
   tanstackStart: {
+    nitro: {
+      preset: 'github-pages',
+    },
     prerender: {
       routes: ['/'],
       crawlLinks: true,

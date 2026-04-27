@@ -10,7 +10,7 @@
     "preview": "vite preview",
     "lint": "eslint .",
     "format": "prettier --write .",
-    "predeploy": "NITRO_PRESET=github-pages npm run build",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d .output/public"
   },
   "dependencies": {
